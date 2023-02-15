@@ -1,0 +1,24 @@
+version: '3.1'
+
+services:
+
+  db:
+    image: postgres
+    container_name: postgres_container
+    restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      PGDATA: /data/postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - "/home/bepo/Documentos/docker-volumes/postgres:/data/postgres"
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8082:8080
+    links:
+      - db:db

@@ -1,0 +1,284 @@
+{
+	"info": {
+		"_postman_id": "e3e62de5-6e48-4426-9431-ed994a21bd3b",
+		"name": "AluraFood",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22121835"
+	},
+	"item": [
+		{
+			"name": "Pagamentos",
+			"item": [
+				{
+					"name": "Obter Todos - Paginado",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8083/pagamentos-ms/pagamentos",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"pagamentos-ms",
+								"pagamentos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter Por Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8083/pagamentos-ms/pagamentos/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"pagamentos-ms",
+								"pagamentos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar Pagamento",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"valor\": 20.50,\n    \"nome\": \"Pagamento X\",\n    \"numero\": \"4111.1111.1111.1111\",\n    \"expiracao\": \"20/2023\",\n    \"codigo\": \"123\",\n    \"pedidoId\": 1,\n    \"formaDePagamento\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8083/pagamentos-ms/pagamentos",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"pagamentos-ms",
+								"pagamentos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Pagamento",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"valor\": 22.50,\n    \"nome\": \"Pagamento X\",\n    \"numero\": \"4111.1111.1111.1111\",\n    \"expiracao\": \"20/2023\",\n    \"codigo\": \"123\",\n    \"status\": \"CONFIRMADO\",\n    \"pedidoId\": 1,\n    \"formaDePagamento\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8083/pagamentos-ms/pagamentos/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"pagamentos-ms",
+								"pagamentos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Confirmar",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "localhost:8083/pagamentos-ms/pagamentos/1/confirmar",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"pagamentos-ms",
+								"pagamentos",
+								"1",
+								"confirmar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Pagamento",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8083/pagamentos-ms/pagamentos/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"pagamentos-ms",
+								"pagamentos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pedidos",
+			"item": [
+				{
+					"name": "Obter Todos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8083/pedidos-ms/pedidos",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"pedidos-ms",
+								"pedidos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter Por Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8083/pedidos-ms/pedidos/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"pedidos-ms",
+								"pedidos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Adicionar Pedido",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 3,\n    \"dataHora\": \"2023-02-14T18:06:43.714161\",\n    \"status\": \"REALIZADO\",\n    \"itens\": [\n        {\n            \"id\": 1,\n            \"quantidade\": 12,\n            \"descricao\": \"Teste\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8083/pedidos-ms/pedidos",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"pedidos-ms",
+								"pedidos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pago Pedido",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 2,\n    \"dataHora\": \"2023-02-14T18:06:43.714161\",\n    \"status\": \"CANCELADO\",\n    \"itens\": [\n        {\n            \"id\": 1,\n            \"quantidade\": 12\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8083/pedidos-ms/pedidos/1/pago",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"pedidos-ms",
+								"pedidos",
+								"1",
+								"pago"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar Status Pedido",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\": \"REALIZADO\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8083/pedidos-ms/pedidos/1/status",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"pedidos-ms",
+								"pedidos",
+								"1",
+								"status"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
