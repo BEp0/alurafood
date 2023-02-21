@@ -1,4 +1,4 @@
-﻿# Alurafood
+# Alurafood
 
 link para o certificado: [link](https://cursos.alura.com.br/certificate/beportoss/microsservicos-implementando-java-spring)
 
